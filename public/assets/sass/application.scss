@@ -1,29 +1,28 @@
 @import '_colours';
 @import '_typography';
+@import '_measurements';
+
+$discovery: $purple;
+$alpha: $pink;
+$beta: $orange;
+$live: $grass-green;
 
 html, body {
   width: 100%;
   height: 100%;
+
 }
 
 body {
   padding: 0;
   margin: 0;
   font-family: "nta", Arial, sans-serif;
+  font-weight: bold;
+  font-size: 70px;
   line-height: 1;
   color: $black;
   background-color: $white;
   text-rendering: opitimizeLegibility;
-}
-
-.index {
-  ul {
-    margin: 0;
-    list-style: none;
-  }
-  a {
-    color: $black;
-  }
 }
 
 main {
@@ -34,41 +33,135 @@ main {
 
 /* ******************************************************** */
 
-.numbers {
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  font-size: 540px;
-  font-weight: bold;
-  text-align: center;
+#slide-container {
+  margin-left: 0;
+  transition: margin-left 1s ease-in-out;
+}
+
+.slide {
+  display: table-cell;
+  vertical-align: middle;
+  width: 1920px;
+  height: 1080px;
+}
+
+.number,
+.flag {
+  color: $white;
+}
+
+.discovery {
+  .label {
+    color: $discovery;
+  }
+  .number,
+  .flag {
+    background-color: $discovery;
+  }
+}
+.alpha {
+  .label {
+    color: $alpha;
+  }
+  .number,
+  .flag {
+    background-color: $alpha;
+  }
+}
+.beta {
+  .label {
+    color: $beta;
+  }
+  .number,
+  .flag {
+    background-color: $beta;
+  }
+}
+.live {
+  .label {
+    color: $live;
+  }
+  .number,
+  .flag {
+    background-color: $live;
+  }
 }
 
 /* ******************************************************** */
 
-/* GOV.UK logo */
-
-.logo {
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  text-align: center;
-
-  font-size: 350px;
-  font-weight: bold;
-  height: 350px;
-  line-height: 350px;
-
+.transformation {
   img {
-    position: relative;
-    top: 20px;
-    width: 395px;
-    padding-right: 6px;
-    display: inline;
-    line-height: inherit;
+    display: block;
+    margin: 0 auto;
+    height: 800px;
+  }
+}
+
+/* ******************************************************** */
+
+.intro {
+  article {
+    padding: ($gutter*2);
+    
+    line-height: 1.2;
+  }
+}
+
+/* ******************************************************** */
+
+.definitions {
+  padding: ($gutter*2) 0;
+  line-height: 1.2;
+  article {
+    display: table-row;
+  }
+  div {
+    display: table-cell;
+    height: 2em;
+    padding: 0.5em $gutter;
+  }
+  .flag {
+    padding: 0 $gutter 0 ($gutter*3);
+  }
+  .detail {
+    padding-right: ($gutter*3);
+  }
+}
+
+/* ******************************************************** */
+
+.numbers {
+  text-align: center;
+  display: table;
+  width: 100%;
+
+  article {
+    display: table-cell;
+    width: 25%;
+    text-align: center;
   }
 
+  .label {
+    margin: 0;
+    
+  }
+
+  .number {
+    color: $white;
+    margin: 0 auto $gutter*2 auto;
+    border-radius: 100%;
+    font-size: 180px;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+  }
+
+}
+
+
+/* ******************************************************** */
+
+.url {
+  font-size: 120px;
+  text-align: center;
 }

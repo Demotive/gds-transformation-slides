@@ -17,18 +17,12 @@ body {
   padding: 0;
   margin: 0;
   font-family: "nta", Arial, sans-serif;
+  font-weight: bold;
+  font-size: 70px;
   line-height: 1;
   color: #0b0c0c;
   background-color: white;
   text-rendering: opitimizeLegibility;
-}
-
-.index ul {
-  margin: 0;
-  list-style: none;
-}
-.index a {
-  color: #0b0c0c;
 }
 
 main {
@@ -38,36 +32,114 @@ main {
 }
 
 /* ******************************************************** */
-.numbers {
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  font-size: 540px;
-  font-weight: bold;
-  text-align: center;
+#slide-container {
+  margin-left: 0;
+  transition: margin-left 1s ease-in-out;
+}
+
+.slide {
+  display: table-cell;
+  vertical-align: middle;
+  width: 1920px;
+  height: 1080px;
+}
+
+.number,
+.flag {
+  color: white;
+}
+
+.discovery .label {
+  color: #2e358b;
+}
+.discovery .number,
+.discovery .flag {
+  background-color: #2e358b;
+}
+
+.alpha .label {
+  color: #d53880;
+}
+.alpha .number,
+.alpha .flag {
+  background-color: #d53880;
+}
+
+.beta .label {
+  color: #f47738;
+}
+.beta .number,
+.beta .flag {
+  background-color: #f47738;
+}
+
+.live .label {
+  color: #85994b;
+}
+.live .number,
+.live .flag {
+  background-color: #85994b;
 }
 
 /* ******************************************************** */
-/* GOV.UK logo */
-.logo {
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  text-align: center;
-  font-size: 350px;
-  font-weight: bold;
-  height: 350px;
-  line-height: 350px;
+.transformation img {
+  display: block;
+  margin: 0 auto;
+  height: 800px;
 }
-.logo img {
-  position: relative;
-  top: 20px;
-  width: 395px;
-  padding-right: 6px;
-  display: inline;
-  line-height: inherit;
+
+/* ******************************************************** */
+.intro article {
+  padding: 60px;
+  line-height: 1.2;
+}
+
+/* ******************************************************** */
+.definitions {
+  padding: 60px 0;
+  line-height: 1.2;
+}
+.definitions article {
+  display: table-row;
+}
+.definitions div {
+  display: table-cell;
+  height: 2em;
+  padding: 0.5em 30px;
+}
+.definitions .flag {
+  padding: 0 30px 0 90px;
+}
+.definitions .detail {
+  padding-right: 90px;
+}
+
+/* ******************************************************** */
+.numbers {
+  text-align: center;
+  display: table;
+  width: 100%;
+}
+.numbers article {
+  display: table-cell;
+  width: 25%;
+  text-align: center;
+}
+.numbers .label {
+  margin: 0;
+}
+.numbers .number {
+  color: white;
+  margin: 0 auto 60px auto;
+  border-radius: 100%;
+  font-size: 180px;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+}
+
+/* ******************************************************** */
+.url {
+  font-size: 120px;
+  text-align: center;
 }
