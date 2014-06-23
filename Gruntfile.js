@@ -40,6 +40,22 @@ module.exports = function(grunt) {
                 spawn: false,
             }
         }
+    },
+
+    smoosher: {
+      all: {
+        options: {
+          jsTags: { // optional
+            start: '<script type="text/javascript">', // default: <script>
+            end: '</script>'                          // default: </script>
+          },
+          jsDir: "../public/",
+          cssDir: "../public/"
+        },
+        files: {
+          'views/offline-index.html': 'views/index.html',
+        }
+      }
     }
   
   });
@@ -47,10 +63,21 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-html-smoosher');
 
   
   grunt.registerTask('default', ['watch']);
   
   grunt.registerTask('init', ['copy']);
+
+  grunt.registerTask('offline', 'Creates a single html file with everything inlined.', function() {
+      
+    grunt.log.writeln('Beginning offline build.');
+    grunt.task.run('sass');
+
+    grunt.log.writeln('Inlining...');
+    grunt.task.run('smoosher');
+
+  });
 
 };
