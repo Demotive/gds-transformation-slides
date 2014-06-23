@@ -35,6 +35,7 @@ main {
 #slide-container {
   margin-left: 0;
   transition: margin-left 1s ease-in-out;
+  overflow: hidden;
 }
 
 .slide {
