@@ -10,21 +10,12 @@ module.exports = function(grunt) {
       htmlFile: 'public/index.html'
     },
 
-    // Copies assets from external modules and dirs
-    copy: {
-      govuk_frontend_toolkit: {
-        expand: true,
-        src: '**',
-        cwd: 'node_modules/govuk_frontend_toolkit/govuk_frontend_toolkit/stylesheets/',
-        dest: 'public/assets/sass/'
-      }
-    },
-
     // CSS
     sass: {
       dist: {
         options: {
-          style: 'expanded'
+          style: 'expanded',
+          loadPath: 'node_modules/govuk_frontend_toolkit/govuk_frontend_toolkit/stylesheets'
         },
         files: {
           '<%= globalConfig.cssFile %>': '<%= globalConfig.scssFile %>'
@@ -45,12 +36,9 @@ module.exports = function(grunt) {
     smoosher: {
       all: {
         options: {
-          jsTags: { // optional
-            start: '<script type="text/javascript">', // default: <script>
-            end: '</script>'                          // default: </script>
-          },
-          jsDir: "../public/",
-          cssDir: "../public/"
+          jsTags: {
+            start: '<script type="text/javascript">'
+          }
         },
         files: {
           'views/offline-index.html': 'views/index.html',
@@ -60,7 +48,6 @@ module.exports = function(grunt) {
   
   });
 
-  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-html-smoosher');
