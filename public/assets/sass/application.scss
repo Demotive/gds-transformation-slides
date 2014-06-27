@@ -25,25 +25,21 @@ body {
   text-rendering: opitimizeLegibility;
 }
 
-main {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
 /* ******************************************************** */
 
 #slide-container {
-  margin-left: 0;
   transition: margin-left 1s ease-in-out;
   overflow: hidden;
+  display: table;
+  width: 100%;
+  height: 100%;
 }
 
 .slide {
   display: table-cell;
   vertical-align: middle;
-  width: 1920px;
-  height: 1080px;
+  width: 100%;
+  height: 100%;
 }
 
 .number,
@@ -111,7 +107,6 @@ main {
 /* ******************************************************** */
 
 .definitions {
-  padding: ($gutter*2) 0;
   line-height: 1.2;
   article {
     display: table-row;
@@ -151,7 +146,8 @@ main {
     color: $white;
     margin: 0 auto $gutter*2 auto;
     border-radius: 100%;
-    font-size: 180px;
+    // 180px;
+    font-size: 257.142857142857%;
     width: 2em;
     height: 2em;
     line-height: 2em;
@@ -163,6 +159,7 @@ main {
 /* ******************************************************** */
 
 .url {
-  font-size: 120px;
+  // 120px
+  font-size: 171.428571428571%;
   text-align: center;
 }
