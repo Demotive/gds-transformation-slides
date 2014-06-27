@@ -41,7 +41,7 @@ module.exports = function(grunt) {
           }
         },
         files: {
-          'views/offline-index.html': 'views/index.html',
+          'public/offline-index.html': 'public/index.html',
         }
       }
     }
