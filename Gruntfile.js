@@ -54,8 +54,6 @@ module.exports = function(grunt) {
 
   
   grunt.registerTask('default', ['watch']);
-  
-  grunt.registerTask('init', ['copy']);
 
   grunt.registerTask('offline', 'Creates a single html file with everything inlined.', function() {
       
