@@ -5,7 +5,9 @@
     "type": "git",
     "url": "http://github.com/demotive/gds-transformation-slides.git"
   },
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.6.1"
+  },
   "devDependencies": {
     "govuk_frontend_toolkit": "0.46.1",
     "grunt": "^0.4.5",

@@ -1,5 +1,5 @@
 var express = require('express');
-var request = require('request');
+//var request = require('request');
 var app = express();
 
 app.use(express.static(__dirname + '/public'));
@@ -13,13 +13,13 @@ app.get('/logo', function (req, res) {
 });
 
 // proxy to realtime traffic from Performance
-app.get('/realtime', function(req, res) {
+/*app.get('/realtime', function(req, res) {
   request('https://www.performance.service.gov.uk/data/government/realtime?sort_by=_timestamp%3Adescending&limit=1', function (error, response, body) {
     if (!error && response.statusCode == 200) {
       res.send(body)
     }
   });
-});
+});*/
 
 
 // start the app
